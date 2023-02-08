@@ -13,10 +13,10 @@
 with lib;
 let
   openhab-cli = fetchurl {
-    url = "https://github.com/openhab/openhab-linuxpkg/raw/d4020f5870a6cfc0a02ea156ba2ada4cf1add616/resources/usr/bin/openhab-cli";
-    sha256 = "Gp1Y9zypz+pLdqWTlyKPk7r2R+t1ZgaCRm3UGVDREZ8=";
+    url = "https://raw.githubusercontent.com/openhab/openhab-linuxpkg/857165ab1c6437c701423cfc59e107b7299d33b4/resources/usr/bin/openhab-cli";
+    sha256 = "sha256-KV1alUzPKIPColJliNujGBR7Ep2zswviqBNhPaSMBkY=";
     postFetch = ''
-      patch $out <${./openhab-cli.patch}
+      patch -f $out <${./openhab-cli.patch}
     '';
   };
 in

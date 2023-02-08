@@ -6,7 +6,7 @@
 }:
 
 let
-  version = "3.1.0";
+  version = "3.4.1";
 
   updateScript = fetchurl {
     url = "https://github.com/openhab/openhab-docker/raw/8e1e2767fc36310dbc5ce87db54ac32780cd740a/debian/update";
@@ -14,8 +14,8 @@ let
   };
 
   addons = fetchurl {
-    url = "https://openhab.jfrog.io/artifactory/libs-release-local/org/openhab/distro/openhab-addons/${version}/openhab-addons-${version}.kar";
-    sha256 = "aSu1T1NhGb1cBMDnfe1STqvrEdxQ0BMDW6Mc2OJ6Jgs=";
+    url = "https://github.com/openhab/openhab-distro/releases/download/${version}/openhab-addons-${version}.kar";
+    sha256 = "sha256-MvxGc5x1KSikT6AWXwcmhqBs/EOdjg2aEy9HaC2DMuM=";
   };
 in
 stdenv.mkDerivation {
@@ -23,8 +23,8 @@ stdenv.mkDerivation {
   inherit version;
 
   src = fetchurl {
-    url = "https://openhab.jfrog.io/artifactory/libs-release-local/org/openhab/distro/openhab/${version}/openhab-${version}.tar.gz";
-    sha256 = "sGqWyz/7HCMjkfiqiQruh2U1BaDsQmHzJcxQvJOnrMg=";
+    url = "https://github.com/openhab/openhab-distro/releases/download/${version}/openhab-${version}.tar.gz";
+    sha256 = "sha256-Mvb2uv0lOtmjV/QbBtWIOZ+n5YidGhPS9u/GhQ4abAc=";
   };
 
   sourceRoot = ".";

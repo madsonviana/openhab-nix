@@ -24,7 +24,7 @@
         }));
     in
     {
-      nixosModule = import ./module.nix { inherit self; };
+      nixosModules.openhab = import ./module.nix { inherit self; };
 
       packages = forAllSystems ({ system, nixpkgs }: rec {
         openhab = nixpkgs.callPackage ./pkg.nix { };
@@ -39,7 +39,7 @@
 
             machine = { ... }: {
               imports = [
-                self.nixosModule
+                self.nixosModules.openhab
               ];
               config = {
                 services.openhab = {

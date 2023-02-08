@@ -1,8 +1,6 @@
-diff --git a/resources/usr/bin/openhab-cli b/resources/usr/bin/openhab-cli
-index 6a0fb6a..346f0e1 100755
---- a/resources/usr/bin/openhab-cli
-+++ b/resources/usr/bin/openhab-cli
-@@ -40,11 +40,11 @@ checkRoot() {
+--- openhab-cli	2023-02-07 21:31:46.070444893 -0300
++++ openhab-cli-mod	2023-02-07 21:31:18.467293499 -0300
+@@ -41,11 +41,11 @@
  
  # For testing if override functions exist
  isFunction() {
@@ -16,7 +14,7 @@ index 6a0fb6a..346f0e1 100755
      echo "openHAB is running! Please stop the process before continuing." >&2
      echo ""
      exit 1
-@@ -65,18 +65,6 @@ confirmAction() {
+@@ -66,18 +66,6 @@
    esac
  }
  
@@ -35,7 +33,7 @@ index 6a0fb6a..346f0e1 100755
  option="$1"
  shift
  
-@@ -113,23 +101,8 @@ case "$option" in
+@@ -114,23 +102,8 @@
      if test "${openHABVersion#*SNAPSHOT}" != "SNAPSHOT"; then
        buildNumber="($(awk '/build-no/{print $4}' "$OPENHAB_USERDATA/etc/version.properties"))"
      fi
@@ -60,7 +58,7 @@ index 6a0fb6a..346f0e1 100755
      printf "%-12s %-16s | %-27s | %s\\n" "Directories:" "Folder Name" "Path" "User:Group"
      printf "%-12s %-16s | %-27s | %s\\n" " " "-----------" "----" "----------"
      for folderName in "OPENHAB_HOME" "OPENHAB_RUNTIME" "OPENHAB_USERDATA" "OPENHAB_CONF" "OPENHAB_LOGDIR" "OPENHAB_BACKUPS"
-@@ -162,6 +135,8 @@ case "$option" in
+@@ -163,6 +136,7 @@
  
  
    "restart"|"start"|"status"|"stop")
